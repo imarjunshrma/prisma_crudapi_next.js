@@ -27,7 +27,7 @@ Todos Crud API in next.js using prisma and mongodb
 #### Create New User
 
 ```https
-  POST /api/todos/id
+  POST /api/todos
 ```
 
 #### Update New User
