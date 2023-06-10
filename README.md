@@ -1,106 +1,34 @@
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# Crud API
+## Getting Started
 
-Todos Crud API in next.js using prisma and mongodb
-
-
-
-## API Reference
-
-#### Get all users
-
-```https
-  GET /api/todos
-```
-
-#### Get a user
-
-```https
-  GET /api/todos/${id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of user to fetch |
-
-
-#### Create New User
-
-```https
-  POST /api/todos
-```
-
-#### Update New User
-
-```https
-  PUT /api/todos/id
-```
-
-
-#### Delete New User
-
-```https
-  Delete /api/todos/id
-```
-
-## Run Locally
-
-Clone the project
+First, run the development server:
 
 ```bash
-  git clone https://github.com/imarjunshrma/CrudAPI_Next.js.git
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
-Go to the project directory
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-  cd my-project
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Install dependencies
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-```bash
-  npm install
-```
+## Learn More
 
-Start the server
+To learn more about Next.js, take a look at the following resources:
 
-```bash
-  npm run dev
-```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Environment Variables
+## Deploy on Vercel
 
-To run this project, you will need to add the following environment variables to your .env file
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-`MONGODB_URL`
-
-
-
-
-## Usage/Examples
-
-```javascript
-export async function PUT(req:Request,context:any){
-    const id=context.params.id
-    const body=await req.json()
-    console.log(id,body)
-   const res= await prisma.todos.update({
-        where:{
-            id
-        },
-        data:body
-    })
-return NextResponse.json(res)
-}
-```
-
-
-## 🛠 Skills
-React,Node,Angular,React Native,Prisma,db,C,C++...
-
-
-## 🚀 About Me
-I'm a full stack developer...
-
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
