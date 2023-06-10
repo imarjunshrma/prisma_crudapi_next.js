@@ -82,17 +82,18 @@ To run this project, you will need to add the following environment variables to
 ## Usage/Examples
 
 ```javascript
-export async function DELETE(req:Request,context:any){
+export async function PUT(req:Request,context:any){
     const id=context.params.id
-  await fetch(`${url}/${id}`,{
-      method:'DELETE',
-      headers:{
-          'Content-Type':"application/json"
-      }
+    const body=await req.json()
+    console.log(id,body)
+   const res= await prisma.todos.update({
+        where:{
+            id
+        },
+        data:body
     })
-  
-      return NextResponse.json({message:'user has been deleted'})
-  }
+return NextResponse.json(res)
+}
 ```
 
 
